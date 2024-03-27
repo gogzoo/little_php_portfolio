@@ -60,6 +60,25 @@
     }
 }
 
+@media (max-width: 400px) {
+    header {
+        height: 50px;
+        padding: 0 0.5em;
+    }
+
+    .head-void {
+        height: 55px;
+    }
+
+    #funcBtn_mb {
+        height: 8vh;
+    }
+
+    #funcBtn_mb>li {
+        font-size: 0.7em;
+    }
+}
+
 /*-----------------------------------------------*/
 
 @media (max-width: 1024px) {
@@ -97,6 +116,16 @@
     }
 }
 
+@media (max-width: 400px) {
+    section {
+        padding: 0.3em;
+    }
+
+    hr.mobile, br.mobile {
+        margin: 0 auto;
+    }
+}
+
 /*-----------------------------------------------*/
 
 @media (max-width: 1024px) {
@@ -118,6 +147,28 @@
     }
 }
 
+@media (max-width: 400px) {
+    .chartStart>li {
+        margin: 1em 0;
+    }
+
+    .chartStart>li>h3 {
+        font-size: 1em;
+    }
+
+    .chartStart>li>h4 {
+        font-size: 0.8em;
+    }
+
+    .chartStart>li>h4>span {
+        font-size: 1.2em;
+    }
+
+    .chartStart>li>p {
+        font-size: 0.8em;
+    }
+}
+
 /*-----------------------------------------------*/
 
 @media (max-width: 1024px) {
@@ -125,6 +176,16 @@
         flex-direction: column;
         margin-right: 0.5em;
         border: none;
+    }
+}
+
+@media (max-width: 400px) {
+    .sec-1>div>h2 {
+        font-size: 1.2em;
+    }
+
+    .sec-1>div>h2>span {
+        font-size: 0.3em;
     }
 }
 
@@ -167,6 +228,55 @@
         font-size: 1em
     }
 }
+
+@media (max-width: 400px) {
+    .BITOBlock>p {
+        text-align: center;
+    }
+
+    .sec-2>div>h2 {
+        font-size: 1.2em;
+    }
+
+    .sec-2>div>h2>span {
+        font-size: 0.3em;
+    }
+
+    .explan>li {
+        font-size: 0.5em;
+    }
+
+    .explan>li>span {
+        font-size: 0.4em;
+    }
+
+    .report>li>h3 {
+        font-size: 1.1em;
+    }
+
+    .report>li>span {
+        font-size: 0.6em;
+    }
+
+    .calc>div>label {
+        font-size: 0.6em;
+        margin-bottom: 0.2em;
+    }
+
+    .calc>div>label>input {
+        font-size: 0.7em;
+        margin-bottom: 0.3em;
+    }
+
+    #result>ul.explan>li {
+        font-size: 0.6em;
+    }
+
+    #result>ul.explan {
+        font-size: 0.7em;
+    }
+}
+
 
 /*-----------------------------------------------*/
 
@@ -262,5 +372,75 @@
 
     #write_m_close {
         margin: 0 0 1em 0;
+    }
+
+    .post-more {
+        width: 95vw;
+        padding: 0.5em 1em;
+    }
+
+    #post_more_title {
+        font-size: 1em;
+        margin: 0.2em 0;
+    }
+
+    .post-more>span {
+        font-size: 0.8em;
+        margin: 0.15em 0;
+    }
+
+    #post_more_para {
+        font-size: 0.9em;
+        padding: 0.3em;
+        margin: 0.2em 0;
+    }
+
+    .postMoreBtns {
+        font-size: 0.8em;
+        margin: 0.25em 0;
+    }
+
+    .postMoreBtns>li>button {
+        padding: 0.2em 1em;
+    }
+
+    .postMoreBtns>li>button:hover {
+        scale: 1.01;
+    }
+}
+
+@media (max-width: 400px) {
+    .sec-3>div>h2 {
+        font-size: 1.2em;
+    }
+
+    .login-bar {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        margin-bottom: 0.3em;
+    }
+
+    .login-bar>p {
+        width: 100%;
+    }
+
+    #loginMobile,
+    #signUpPopup,
+    #writeMobile,
+    #logoutForm {
+        margin: 0.6em 0.2em 0 0;
+    }
+
+    .post-list {
+        padding: 0.3em;
+    }
+
+    #postList>ul.postWrap>li {
+        padding: 0.5em;
+        margin-bottom: 0.3em;
+    }
+
+    #postList>ul.postWrap>li:hover {
+        scale: 1.01;
     }
 }

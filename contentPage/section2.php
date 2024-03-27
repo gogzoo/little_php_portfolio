@@ -62,7 +62,7 @@
 
 <div>
     <div class="BITOBlock" <?= $displayNone ?> >
-        <p>BITO 정보는 회원만 열람 가능합니다😥</p>
+        <p>BITO 정보는 회원만<br class="mobile"> 열람 가능합니다<br class="mobile">😥</p>
     </div>
 
     <h2>BITO 정보 리포트예요. <span>휴일 정보는 0입니다.<br class="mobile"> 오늘이 휴일일 경우 직전 평일값이 출력됩니다.</span></h2>
