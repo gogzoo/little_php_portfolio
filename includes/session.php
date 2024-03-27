@@ -1,7 +1,9 @@
 <?php 
+    ini_set('session.gc_maxlifetime', 3600);
+
     session_start();
 
-    $_SESSION["logined"] = false;
+    $logined = $_SESSION["logined"] ?? false;
 
     // 일단 익명용 아이디 생성
     $anonId = '#'. dechex(rand(0x000000, 0xFFFFFF));

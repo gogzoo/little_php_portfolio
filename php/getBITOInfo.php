@@ -42,7 +42,7 @@
     $print_lastday->sub(new DateInterval("P7D")); // 저번주로 바꿈
     $print_lastday = $print_lastday->format("Y-m-d");
 
-    //var_dump( $print_lastday);
+    //var_dump($print_lastday);
 
     // 예: ttps://api.polygon.io/v2/aggs/ticker/BITO/range/1/day/2024-03-11/2024-03-18?adjusted=true&sort=asc&limit=120&apiKey=인증키
     // 예: ttps://api.polygon.io/v1/open-close/AAPL/2023-01-09?adjusted=true&apiKey=인증키
@@ -55,8 +55,29 @@
     //{"status":"OK","from":"2024-03-20","symbol":"BITO","open":29.03,"high":30.255,"low":28.41,"close":30.11,"volume":2.3632179e+07,"afterHours":31.07,"preMarket":28.76}
 
     //요청 보내기
-    $BITOData = file_get_contents($sendURL_2);
-    $BITOData = json_encode($BITOData, true);
+
+    try { 
+        $BITOData = @file_get_contents($sendURL_2);
+        // @는 오류보고를 하지 말라는 뜻
+        // 어차피 file_get_content는 실패 시 예외를 던지는게 아니라 오류를 던져서 catch 이하를 실행하지 않음.
+
+        if ($BITOData == false) {
+            throw new Exception("데이터 수신 실패");
+            // 내가 대신 예외 던져서 catch이하로 유도하기.
+        }
+
+    }catch (Exception $e) {
+        // 어제날짜로 조회했는데, 아직 장이 안끝나서 오류가 생긴 경우
+
+        $print_lastday = new DateTime($print_lastday);
+        $print_lastday->sub(new DateInterval("P1D"));
+        $print_lastday = $print_lastday->format("Y-m-d");
+        // 어제에서 또 어제를 만듬.
+
+        $sendURL_2 = "https://api.polygon.io/v1/open-close/BITO/" . $print_lastday . "?adjusted=true&apiKey=" . $key["authkeys"];
+
+        $BITOData = file_get_contents($sendURL_2);
+    }   
 
     // 이하 분배금정보 조회
     $sendURL_3 = "https://api.polygon.io/v3/reference/dividends?ticker=BITO&apiKey=" . $key["authkeys"];

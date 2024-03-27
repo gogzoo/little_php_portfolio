@@ -1,5 +1,3 @@
-<!-- dbConnect.php -->
-
 <?php 
 
     $type = "mysql"; // 데이터베이스 소프트웨어
